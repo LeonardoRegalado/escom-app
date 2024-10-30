@@ -1,0 +1,24 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    display: flex; /* Cambiado a flex para que los elementos se alineen en fila */
+}
+
+li {
+    flex: 1; /* Hace que cada elemento ocupe el mismo espacio */
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Cambiar el color del enlace a negro al pasar el mouse */
+li a:hover {
+    background-color: #111;
+}
