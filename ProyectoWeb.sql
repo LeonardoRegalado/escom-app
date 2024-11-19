@@ -7,9 +7,11 @@ CREATE TABLE roles (
     nombre VARCHAR(50) NOT NULL UNIQUE -- 'Profesor', 'Jefe de Área', 'Subdirector'
 );
 
+
 -- Tabla de áreas académicas
 CREATE TABLE areas (
     id INT PRIMARY KEY AUTO_INCREMENT,
+    id_academia varchar(8) NOT NULL UNIQUE,
     nombre VARCHAR(100) NOT NULL UNIQUE
 );
 
