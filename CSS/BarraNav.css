@@ -1,0 +1,74 @@
+/* Estilos para el Navbar */
+.navbar {
+    width: 100%; /* Ocupa el 100% del ancho */
+    position: fixed; /* Fija la barra en la parte superior */
+    top: 0; /* Asegura que esté en la parte superior de la pantalla */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    background-color: #003d61; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espacio interior para mejorar la apariencia */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para efecto de profundidad */
+}
+
+/* Alinea el contenido del navbar y centra las viñetas */
+.navbar .navbar-collapse {
+    display: flex;
+    justify-content: center; /* Espacio entre el logo y los links */
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilo para el texto del título o logo */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white; /* Color del título */
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/* Estilo de los enlaces */
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8); /* Color del texto */
+    font-size: 1rem;
+    padding: 8px 15px; /* Espacio alrededor del texto */
+    text-decoration: none;
+    transition: color 0.3s ease, background 0.3s ease; /* Suaviza el cambio de color */
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+/* Efecto hover en los enlaces */
+.navbar-nav .nav-link:hover {
+    color: #f2f2f2;
+    background-color: #005681; /* Color de fondo al pasar el cursor */
+    justify-content: center;
+}
+
+/* Estilo para la versión colapsada del menú en dispositivos móviles */
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%28255, 255, 255, 0.8%29" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
+/* Espaciado superior para el contenido principal */
+.content {
+    margin-top: 70px; /* Ajusta según la altura del navbar */
+}
+
+
+/* BarraNav.css */
+.navbar-logo {
+    height: 60px; /* Cambia la altura */
+    width: auto; /* Mantén la proporción del logo */
+}
+
+.LogoEscom {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Alinea el logo a la derecha */
+}
