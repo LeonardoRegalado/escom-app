@@ -1,0 +1,280 @@
+/* General */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+/* Contenedor general del login */
+.login-container {
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén en columnas */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    height: 100vh;
+    background: linear-gradient(135deg, #003d61, #005681); /* Degradado dinámico */
+    padding: 20px; /* Añade espacio alrededor */
+}
+
+/* Cuadro de Login */
+.login {
+    border: 1px solid black;
+    width: 80%; /* Ocupa el 80% del contenedor */
+    max-width: 400px; /* Máximo ancho */
+    padding: 20px;
+    background-color: rgba(0, 86, 129, 0.8); /* Fondo transparente */
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.75);
+}
+
+/* Formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 1px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;   
+    margin-bottom: 10px;
+}
+
+.btn-redondeado {
+    background: #f2f2f2;
+    color: rgb(15, 15, 15); /* Color de texto inicial */
+    font-size: 16px;
+    padding: 10px;
+    width: 40%;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease; /* Añade transición de color */
+    margin: 0 auto;
+}
+
+.btn-redondeado:hover {
+    background: #003d61; /* Cambia el color del fondo */
+    color: #ffffff; /* Cambia el color del texto al blanco */
+}
+
+/* Imagen de Fondo */
+.image-container {
+    height: 100vh;
+    background: url(../IMAGES/FondoLogin.png) no-repeat center center;
+    background-size: cover;
+}
+
+/* Mensaje de bienvenida */
+.mensaje {
+    margin-bottom: 20px; /* Añade espacio debajo del mensaje */
+    color: white;
+    text-align: center; /* Centra el texto */
+    font-size: 18px;
+    font-weight: bold;
+    max-width: 90%; /* Limita el ancho del texto */
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Da un efecto visual suave */
+}
+
+/* --- Media Queries para Responsividad --- */
+
+/* Estilos para dispositivos pequeños (celulares) */
+@media (max-width: 768px) {
+    .login-container {
+        height: auto; /* Ajusta el contenedor para que crezca según el contenido */
+        padding: 20px;
+    }
+
+    .login {
+        width: 90%; /* Más ancho en dispositivos pequeños */
+        max-width: none; /* Elimina la restricción de ancho máximo */
+        box-shadow: none; /* Reduce las sombras para menor contraste */
+    }
+
+    .image-container {
+        height: 200px; /* Reduce la altura de la imagen */
+        background-size: cover;
+    }
+
+    .mensaje {
+        font-size: 16px; /* Reduce el tamaño del texto */
+        max-width: 100%;
+    }
+}
+
+/* Estilos para tabletas */
+@media (min-width: 768px) and (max-width: 1200px) {
+    .login-container {
+        height: 100vh; /* Mantén la altura completa */
+        padding: 20px;
+    }
+
+    .login {
+        width: 70%; /* Más ancho en tabletas */
+        max-width: 400px; /* Mantén el ancho máximo */
+    }
+
+    .mensaje {
+        font-size: 18px; /* Tamaño de texto ligeramente más grande */
+    }
+}
+
+/* Estilo para el contenedor del dashboard */
+.container {
+    margin-top: 100px; /* Ajuste para evitar que el contenido se sobreponga al navbar */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilo para los botones del dashboard */
+.btn-block {
+    display: inline-block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #005681;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #003d61;
+    color: #f2f2f2;
+}
+
+.btn-secondary {
+    background-color: #003d61;
+    color: white;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #005681;
+    color: #f2f2f2;
+}
+
+/* Estilo adicional para el contenedor */
+.dashboard-content {
+    background: linear-gradient(135deg, #005681, #003d61);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor principal del dashboard */
+.dashboard-content {
+    background: linear-gradient(135deg, #005681, #003d61);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones principales */
+.btn-block {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos de colores */
+.btn-primary {
+    background-color: #005681;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #003d61;
+    color: #f2f2f2;
+}
+
+.btn-secondary {
+    background-color: #003d61;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #005681;
+    color: #f2f2f2;
+}
+
+.btn-info {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #0056b3;
+}
+
+/* Tarjetas (cards) */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Botones principales */
+.btn-block {
+    width: 100%; /* Asegura que los botones ocupen todo el ancho en pantallas pequeñas */
+    padding: 15px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #003d61;
+    color: #f2f2f2;
+}
+
+.btn-secondary:hover {
+    background-color: #005681;
+    color: #ffffff;
+}
+
+.btn-info:hover {
+    background-color: #0056b3;
+}
