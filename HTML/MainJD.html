@@ -51,6 +51,8 @@
                 <div class="d-flex flex-column">
                     <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalSolicitudes">Revisar Solicitudes</button>
                     <button class="btn btn-secondary mb-3" data-bs-toggle="modal" data-bs-target="#modalReportes">Generar Reportes</button>
+                    <!-- Botón para cambiar estado -->
+                    <button class="btn btn-info mb-3" data-bs-toggle="modal" data-bs-target="#modalDisponibilidad">Cambiar Estado</button>
                 </div>
             </div>
 
@@ -92,11 +94,12 @@
                                 <td>Día Económico</td>
                                 <td>10/01/2025</td>
                                 <td>
+                                    <button class="btn btn-info btn-sm" onclick="verFormulario('Juan Pérez')">Revisar Formulario</button>
                                     <button class="btn btn-success btn-sm" onclick="aprobarSolicitud('Juan Pérez', 'Día Económico')">Aprobar</button>
                                     <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalRechazo" onclick="prepararRechazo('Juan Pérez', 'Día Económico')">Rechazar</button>
                                 </td>
                             </tr>
-                            <!-- Más filas -->
+                            <!-- Más filas dinámicas -->
                         </tbody>
                     </table>
                 </div>
@@ -122,6 +125,33 @@
                             <textarea id="comentarioRechazo" class="form-control" rows="3" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-danger">Enviar Rechazo</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Cambiar Disponibilidad -->
+    <div class="modal fade" id="modalDisponibilidad" tabindex="-1" aria-labelledby="modalDisponibilidadLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalDisponibilidadLabel">Cambiar Estado de Disponibilidad</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formDisponibilidad">
+                        <div class="mb-3">
+                            <label for="estadoDisponibilidad" class="form-label">Estado Actual</label>
+                            <select id="estadoDisponibilidad" name="estadoDisponibilidad" class="form-select" required>
+                                <option value="disponible">Disponible</option>
+                                <option value="no_disponible">No Disponible</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Actualizar Estado</button>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -165,6 +195,31 @@
             </div>
         </div>
     </div>
+
+    <!-- Script para gestionar acciones -->
+    <script>
+        function verFormulario(docente) {
+            alert(`Mostrando el formulario enviado por ${docente}.`);
+        }
+
+        function aprobarSolicitud(docente, tipoIncidencia) {
+            alert(`Solicitud de ${docente} (${tipoIncidencia}) aprobada. Memorándum enviado al Departamento de Capital Humano.`);
+        }
+
+        function prepararRechazo(docente, tipoIncidencia) {
+            document.getElementById('formRechazo').onsubmit = function (e) {
+                e.preventDefault();
+                const comentario = document.getElementById('comentarioRechazo').value;
+                alert(`Solicitud de ${docente} (${tipoIncidencia}) rechazada con comentario: ${comentario}. Correo enviado al docente.`);
+            };
+        }
+
+        document.getElementById('formDisponibilidad').onsubmit = function (e) {
+            e.preventDefault();
+            const estado = document.getElementById('estadoDisponibilidad').value;
+            alert(`Estado actualizado a: ${estado === 'disponible' ? 'Disponible' : 'No Disponible'}. Notificación enviada al Administrador.`);
+        };
+    </script>
 </body>
 
 </html>
